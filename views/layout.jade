@@ -12,5 +12,12 @@ html
 
  body
    block content
-   script(type="text/template" data-name="layout")
+   script(type="text/template" data-name="container")
      include templates/container.html
+
+   script(type="text/template" data-name="addTodo")
+     include templates/addTodo.html
+
+   script(type="text/template" data-name="todo")
+     include templates/todo.html
+   script(src="javascripts/application.js")
