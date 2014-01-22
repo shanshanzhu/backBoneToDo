@@ -5,3 +5,39 @@ body {
 a {
   color: #00b7ff;
 }
+.container {
+  padding: 0px;
+  border-radius: 5px;
+  width: 50%;
+  min-width: 300px;
+  min-height: 400px;
+  border: 1px solid #ddd;
+}
+.todo-form,
+.todoItem {
+  padding: 10px;
+  border: solid #ddd;
+  border-width: 0px 0px 1px 0px;
+  width: 100%;
+}
+.todoItem {
+  position: relative;
+}
+.cross {
+  position: absolute;
+  right: 1em;
+  color: #f00;
+  cursor: pointer;
+}
+.todo-input {
+  width: 80%;
+  border-radius: 2px;
+}
+.button {
+  margin-left: 6px;
+  border-radius: 10px;
+  background-color: #ddd;
+}
+.strike-through {
+  text-decoration: line-through;
+}

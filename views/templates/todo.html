@@ -1,3 +1,5 @@
-<div>
-  TODO:<span class="<%= (done) ? 'strike-through' : '' %>"><%= description %></span>
+<div class="todoItem">
+  <input type='checkbox' <%= (done)? 'checked': ''%>></input>
+  <span class="<%= (done) ? 'strike-through' : '' %>"><%= description %></span>
+  <span class="cross">X<span>
 </div>

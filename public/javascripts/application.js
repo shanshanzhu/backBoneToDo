@@ -26,7 +26,8 @@
       "submit": "onSubmit"
     },
 
-    onSubmit: function() {
+    onSubmit: function(e) {
+      e.preventDefault();
       var descp = $('.todo-input').val();
       this.collection.add([{description: descp, done: false}]);
     },
@@ -38,13 +39,13 @@
 
   });
 
-  var toDoModel = Backbone.Model.extend({
+  var toDo = Backbone.Model.extend({
     
   });
   
   var ToDoList = Backbone.Collection.extend({
     
-    Model: toDoItem,
+    Model: toDo,
 
   });
 
@@ -52,15 +53,13 @@
 
     template: templates['todo'],
 
-    tagName: 'li',
-
     initialize: function() {
 
     },
 
     events: {
-      '.cross click': 'onDelete',
-      '.checkBox click': 'changeDone'
+      'click .cross ': 'onDelete',
+      'click :checkbox': 'changeDone'
     },
 
     changeDone: function() {
@@ -82,7 +81,7 @@
     }
   });
 
-  var toDoListView = Backbone.View.extend({
+  var ToDoListView = Backbone.View.extend({
 
     initialize:function(){
       this.collection.on('reset', this.render, this);
@@ -98,18 +97,27 @@
 
     renderOne: function(item) {
       var itemEl = new toDoItemView({model:item})
-      this.$el.append(itemEl);
+      this.$el.append(itemEl.render().el);
     }
   });
 
   var appView = Backbone.View.extend({
 
+    template: templates['container'],
+
     initialize: function() {
+      this.$el.html(this.template());
       var toDoList = new ToDoList();
-      var toDoListView = new toDoListView({collection: toDoList});
-      var addTodo = new AddToDoView({collection: toDoList})
-      this.$el.append(toDoListView.render().el);
-      this.$el.append(addTodo.render().el);
+      var addTodo = new AddToDoView({
+        collection: toDoList,
+        el: this.$('.inputForm')
+      });
+      var toDoListView = new ToDoListView({
+        collection: toDoList,
+        el: this.$('.todos')
+      });
+      addTodo.render();
+      toDoListView.render();
     }
   });
 
@@ -135,13 +143,12 @@ var context = this.model.attributes;
 
   //starts our app
 
-  app.init = function() {
-    var app = new appView({
-      el: $('body')
-    });
-  };
+  $(document).ready(function() {
+    var app = new appView();
+    $('body').append(app.el);
+  });
 
-  $(_.bind(app.init, app));
+  // $(_.bind(app.init, app));
 
 
 }).call(this);
