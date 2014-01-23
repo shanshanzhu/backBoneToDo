@@ -28,8 +28,9 @@
 
     onSubmit: function(e) {
       e.preventDefault();
-      var descp = $('.todo-input').val();
+      var descp = this.$('.todo-input').val();
       this.collection.add([{description: descp, done: false}]);
+      this.$('.todo-input').val('');
     },
 
     render: function() {
