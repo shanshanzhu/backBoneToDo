@@ -1,0 +1,42 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/Users/shanshan/.nvm/v0.10.21/bin/npm',
+1 verbose cli   'owner',
+1 verbose cli   'ls',
+1 verbose cli   'todobb' ]
+2 info using npm@1.3.21
+3 info using node@v0.10.21
+4 verbose url raw todobb
+5 verbose url resolving [ 'https://registry.npmjs.org/', './todobb' ]
+6 verbose url resolved https://registry.npmjs.org/todobb
+7 info trying registry request attempt 1 at 16:31:59
+8 http GET https://registry.npmjs.org/todobb
+9 http 404 https://registry.npmjs.org/todobb
+10 silly registry.get cb [ 404,
+10 silly registry.get   { date: 'Thu, 23 Jan 2014 00:32:00 GMT',
+10 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R15B03)',
+10 silly registry.get     'content-type': 'application/json',
+10 silly registry.get     'cache-control': 'max-age=0',
+10 silly registry.get     'content-length': '52',
+10 silly registry.get     'accept-ranges': 'bytes',
+10 silly registry.get     via: '1.1 varnish',
+10 silly registry.get     age: '0',
+10 silly registry.get     'x-served-by': 'cache-lax1427-LAX',
+10 silly registry.get     'x-cache': 'MISS',
+10 silly registry.get     'x-cache-hits': '0',
+10 silly registry.get     'x-timer': 'S1390437120.236512899,VS0,VE44',
+10 silly registry.get     'keep-alive': 'timeout=10, max=50',
+10 silly registry.get     connection: 'Keep-Alive' } ]
+11 error owner ls Couldn't get owner data todobb
+12 error 404 'todobb' is not in the npm registry.
+12 error 404 You should bug the author to publish it
+12 error 404
+12 error 404 Note that you can also install from a
+12 error 404 tarball, folder, or http url, or git url.
+13 error System Darwin 13.0.2
+14 error command "node" "/Users/shanshan/.nvm/v0.10.21/bin/npm" "owner" "ls" "todobb"
+15 error cwd /Users/shanshan/Projects/backBoneToDo
+16 error node -v v0.10.21
+17 error npm -v 1.3.21
+18 error code E404
+19 verbose exit [ 1, true ]
