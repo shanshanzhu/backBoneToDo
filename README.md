@@ -1,4 +1,4 @@
-An interview practice to use backboneJS to write a todo app.
+Use backboneJS to write a todo app.
 
 ===================
 Deployed on heroku
